@@ -4,7 +4,7 @@
  Author      : Nicola Avanzi
  Version     : 0.1b
  Copyright   : Free for all
- License	 : Creative Commons Attribution 4.0 International License
+ License     : Creative Commons Attribution 4.0 International License
  Description : Dela Eprommer control software
  ============================================================================
  */
