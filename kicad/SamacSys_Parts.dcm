@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NE555DR
+D Single Precision Timer
+K
+F http://www.ti.com/lit/ds/symlink/ne555.pdf
+$ENDCMP
+#
+$CMP CD74HCT373E
+D High Speed CMOS Logic Octal Transparent Latches with 3-State Outputs
+K
+F http://www.ti.com/lit/gpn/cd74hct373
+$ENDCMP
+#
+#End Doc Library

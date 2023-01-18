@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name Amiga)(type Legacy)(uri ${KIPRJMOD}/Amiga.lib)(options "")(descr ""))
+  (lib (name Eprommer-rescue)(type Legacy)(uri ${KIPRJMOD}/Eprommer-rescue.lib)(options "")(descr ""))
+)
