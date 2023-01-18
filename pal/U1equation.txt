@@ -1,0 +1,66 @@
+INPUT pin
+A1-A3 e A20-A23
+UPPER e LOWER DATA STROBE (UDS e LDS)
+ADDRESS STROBE (AS)
+READ OR WRITE (R_W)
+
+
+OUTPUT pin
+
+LATCH ENALBE su U2+U5 e U3+U6
+CHIP ENABLE su U4
+
+
+Inputs:
+
+1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 14, 15, 16, 17, 18
+
+Outputs:
+
+13 (Combinatorial, Output feedback output, Active low)
+14 (Combinatorial, Output feedback output, Active low)
+15 (Combinatorial, Output feedback output, Active low)
+16 (Combinatorial, Output feedback output, Active low)
+17 (Combinatorial, Output feedback output, Active low)
+
+Equations:
+
+/o13 = /i1 & i2 & i3 & i4 & /i5 & /i6 & /i7 & /i8 & i18
+o13.oe = vcc
+
+/o14 = /i1 & i2 & i3 & i4 & /i5 & /i6 & /i7 & /i8 & i11
+o14.oe = vcc
+
+/o15 = /i1 & i2 & i3 & i4 & /i5 & /i6 & /i7 & i8 & i9
+o15.oe = vcc
+
+/o16 = o14
+o16.oe = vcc
+
+/o17 = o13
+o17.oe = vcc
+
+Write cycle A1 high assert LE_1 on U3 and U6           
+/LE_1 = /A23 & A22 & A21 & A20 & /UDS & /LDS & /AS & /R_W & A1
+
+Write cycle A2 high assert LE_2 on U2 and U5
+/LE_2 = /A23 & A22 & A21 & A20 & /UDS & /LDS & /AS & /R_W & A2
+
+Read cycle A3 high  assert CE on U4 
+/CE = /A23 & A22 & A21 & A20 & /UDS & /LDS & /AS & R_W & A3
+
+         A1 A2 A3 ....... A20 A21 A22 A23
+ /LE_1   1  -  -        1   1   1   0
+ /LE_2   -  1  -        1   1   1   0
+ /CE     -  -  1        1   1   1   0
+ 
+      A23 A22 A21 A20 ......... A3 A2 A1 
+/LE_1  0   1   1   1            0  0  1
+/LE_2  0   1   1   1            0  1  0
+/CE    0   1   1   1            1  0  0
+
+/LE 0x700002
+/LE 0x700004
+/CE 0x700008
+
+ 
