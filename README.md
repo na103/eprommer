@@ -28,6 +28,7 @@ The board is built around a handful of standard logic chips:
 
 ![Top side of the board](img/front_small.jpg) 
 ![Down side of the board](img/rear_small.jpg) 
+</br></br>
 The board has no silkscreen reference designators — labels above are those assigned during reverse engineering.
 
 ## Address map
